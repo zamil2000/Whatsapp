@@ -60,3 +60,4 @@ example://input[@id='txtuser']/following-sibilings::span
 7.Locating preceding sibilings
 synatx://<knownXpath>/following-preceding::<elementName>
 example://input[@id='txtuser']/following-preceding::span
+//Adding some branch

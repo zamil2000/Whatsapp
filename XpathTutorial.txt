@@ -1,0 +1,62 @@
+XPATH.......
+Xpath had two types:
+*Absolute-its start from rootnode contains single (slash)/
+*Relative -its start with current node and double (slash)//
+
+IDENTIFICATION STRATEGIES:
+1.lOCATING ELEMENTS WITH KNOWN ATTRIBUTES:
+EX://*[@id ='textusername'].-(*)->represent Element dont know
+2.lOCATING ELEMENTS WITH KNOWN   ELEMENTS AND ATTRIBUTES
+ex://input[@id='textuser'] this time known Element
+3.lOCATING ELEMENTS WITH KNOWN    VISIBLE TEXT(exact match)
+ex://a[text()='exact text is given'] -text()->function
+4.lOCATING ELEMENTS WHEN PART OF THE VISIBLE TEXT IS KNOWN (PARTIAL MATCH)
+We dontkonw the full of text "heloworldhii" we can use contain(text("helo"))
+ex://a[Contains(text('hello'))] 
+5.lOCATING ELEMENTS WITH MULTIPLE ATTRIBUTES
+we write same element ex;button had id,name,class we write all attributes
+ex://*[@type='submit'][@name='submit'][@class='button']
+6.lOCATING ELEMENTS WHEN STATING VISIBLE TEXT IS KNOWN
+we had element that refersh to change when we refresh
+ex:agni123 
+   f5->refresh
+   agni321
+codeEx://*[start-with(text(),'orangehrm')]
+7.lOCATING ELEMENTS WITH DYNAMIC ATTRIBUTE VALUES
+same of 6th rules but modifies we can use contains,start-with
+//*[Contains(@href,'orange')]->we have give partial text using with contains
+//*[Starts-with(@hrf,'http')]
+
+NOTE:Xpath can do bidirectional navigation(Going forward and backword)
+
+Locating elements relative to know elements
+=============================================
+1.Locating a parent element
+synatx://<knownXpath>/parent::elementName (dont know element name)give*
+example://*[@id='divusername']/parent::form or *
+2.Locating a child element
+synatx://<knownXpath>/child::<elementName>
+Eg://*[@id='divusername']/child::form
+or
+synatx://<knownXpath>/elementsname
+Eg://*[@id='divusername']/form
+3.Locating ancestor of a known elements -ancestor means greatparent
+sytanx:
+//<knownXpath>/ancestor::<elementName>or
+eg://*[@id='divusername']/ancestor::form
+//<knownXpath>/ancestor::<elementName>::*
+eg://*[@id='divusername']/ancestor::*
+4.Locating following elements ->it contains currentnode after
+synatx://<knownXpath>/following::<elementName>
+eg://input[@id='txtuser']/following::input
+//input[@id='txtuser']/following::input[2]
+//input[@id='txtuser']/following::input[last()]
+5.Locating preceding element ->preceding-beforenode
+synatx://<knownXpath>/preceding::<elementName>
+Eg://input[@id='txtuser']/preceding::input
+6.Locating following sibiling
+synatx://<knownXpath>/following-sibling::<elementName>
+example://input[@id='txtuser']/following-sibilings::span
+7.Locating preceding sibilings
+synatx://<knownXpath>/following-preceding::<elementName>
+example://input[@id='txtuser']/following-preceding::span
